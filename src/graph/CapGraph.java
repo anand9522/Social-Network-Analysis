@@ -102,7 +102,7 @@ public class CapGraph implements Graph {
 
 	}
 
-	public void SCCDFSUtil(int v, HashSet visited, HashMap<Integer,HashSet<Integer>> transpose, List vertices){
+	public void SCCDFSUtil(int v, HashSet visited, HashMap<Integer, HashSet<Integer>> transpose, List vertices) {
 		vertices.add(v);
 		visited.add(v);
 		for (int neighbor : transpose.get(v)){
@@ -128,7 +128,7 @@ public class CapGraph implements Graph {
 		s.push(v);
 	}
 
-	public HashMap<Integer, HashSet<Integer>> graphTranspose(){
+	public HashMap<Integer, HashSet<Integer>> graphTranspose() {
 
 		HashMap<Integer,HashSet<Integer>> graphT=new HashMap<>();
 
@@ -147,8 +147,7 @@ public class CapGraph implements Graph {
 	}
 
 
-
-	public Graph graphFromVertices(List<Integer> vertices){
+	public Graph graphFromVertices(List<Integer> vertices) {
 
 		Graph g=new CapGraph();
 
