@@ -31,7 +31,7 @@ public class CapGraph implements Graph {
 	 */
 	@Override
 	public void addEdge(int from, int to) {
-		if (edges.containsKey(from)){
+		if (edges.containsKey(from)) {
 			edges.get(from).add(to);
 		}
 
@@ -43,14 +43,14 @@ public class CapGraph implements Graph {
 	@Override
 	public Graph getEgonet(int center) {
 
-		if(!edges.containsKey(center)){
+		if (!edges.containsKey(center)) {
 			return null;
 		}
 
 		Graph g=new CapGraph();
 		HashSet<Integer> egoVertices=edges.get(center);
 
-		for (int egoVertex:egoVertices){
+		for (int egoVertex : egoVertices) {
 			g.addVertex(egoVertex);
 		}
 
