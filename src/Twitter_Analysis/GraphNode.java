@@ -10,6 +10,8 @@ public class GraphNode {
     //whether it has been reached through an influencer or not.
     private boolean covered;
 
+    private int user_id;
+
     //Counting number of followers left to be covered
     private int unmarked_followers;
 
@@ -19,5 +21,8 @@ public class GraphNode {
     //This users followers
     private HashSet<GraphNode> followers;
 
+    public boolean isCovered() {
+        return covered;
+    }
 
 }
