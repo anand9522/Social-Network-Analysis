@@ -25,4 +25,13 @@ public class GraphNode {
         return covered;
     }
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public int getUnmarked_followers() {
+        return unmarked_followers;
+    }
+
+
 }
