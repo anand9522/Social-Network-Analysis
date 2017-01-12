@@ -1,5 +1,7 @@
 package Twitter_Analysis;
 
+import graph.Graph;
+
 import java.util.HashSet;
 
 /**
@@ -7,6 +9,13 @@ import java.util.HashSet;
  */
 public class GraphNode {
 
+    public GraphNode(int user_id){
+        this.covered=false;
+        this.user_id=user_id;
+        this.unmarked_followers=0;
+        following=new HashSet<>();
+        followers=new HashSet<>();
+    }
     //whether it has been reached through an influencer or not.
     private boolean covered;
 
@@ -33,5 +42,23 @@ public class GraphNode {
         return unmarked_followers;
     }
 
+    public HashSet getFollowers(){
+        return new HashSet(followers);
+    }
 
+    public HashSet getFollowing(){
+        return new HashSet(following);
+    }
+
+    public void setUnmarkedFollowers(int unmarked_followers){
+        this.unmarked_followers=unmarked_followers;
+    }
+
+    public void addFollowing(GraphNode person){
+        following.add(person);
+    }
+
+    public void addFollower(GraphNode person){
+        followers.add(person);
+    }
 }
