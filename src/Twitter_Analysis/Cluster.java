@@ -29,10 +29,6 @@ public class Cluster {
         recomputeMean();
     }
 
-    public float getMean(){
-        return mean;
-    }
-
     public void setCenter(GraphNode center){
         this.center=center;
     }

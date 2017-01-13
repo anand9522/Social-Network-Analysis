@@ -14,10 +14,11 @@ public class TwitterGraph {
         graphNodeMap=new HashMap<>();
     }
 
+    //Check for Node
     public boolean containsNode(int node){
         return graphNodeMap.containsKey(node);
     }
-    //
+
     public void addEdge(int from, int to){
         if (!graphNodeMap.containsKey(from)){
             GraphNode node = new GraphNode(from);
@@ -33,6 +34,7 @@ public class TwitterGraph {
         graphNodeMap.get(from).addFollowing(graphNodeMap.get(to));
     }
 
+    // Easier Question: k-means clustering. Though this turned out to be harder than the harder question :).
     public HashSet<Cluster> getCommunities(int user, int k){
         if(graphNodeMap.get(user).getFollowers().size()<k){
             return null;
@@ -49,7 +51,7 @@ public class TwitterGraph {
         }
         return clusters;
     }
-
+    // Harder Question: k-most Domination Set. this is a heuristic because optimal solution is NP- Complete and not feasible for large graph.
     public HashSet<GraphNode> getK_DominationSet(int k){
         HashSet<GraphNode> influencers=new HashSet<>();
         if (graphNodeMap.size()<k){
