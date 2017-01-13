@@ -1,5 +1,7 @@
 package Twitter_Analysis;
 
+import graph.Graph;
+
 import java.util.*;
 
 /**
@@ -22,10 +24,49 @@ public class TwitterGraph {
         if(graphNodeMap.get(user).getFollowers().size()<k){
             return null;
         }
+        boolean moved=true;
         HashSet<Cluster> clusters=new HashSet<>();
+
         randomClusterAllotment(clusters,user,k);
 
+        while (moved) {
+            resetCenters(clusters);
+
+            moved=reallotNodesToClusters(clusters);
+        }
         return clusters;
+    }
+
+    private boolean reallotNodesToClusters(HashSet<Cluster> clusters) {
+        Boolean moved=false;
+        for (Cluster cluster:clusters){
+            for (GraphNode node: cluster.getAllotedVertices()) {
+                float min=Float.MAX_VALUE;
+                Cluster nearestCluster=null;
+
+                for (Cluster otherCluster : clusters) {
+                    float diff=Math.abs(otherCluster.getCenterWeight()-node.getWeight());
+                    if (diff<min){
+                        min=diff;
+                        nearestCluster=otherCluster;
+                    }
+                }
+
+                if (!nearestCluster.equals(cluster)){
+                    nearestCluster.addNodeToCluster(node);
+                    cluster.removeNodeFromCluster(node);
+                    moved=true;
+                }
+
+            }
+        }
+        return moved;
+    }
+
+    private void resetCenters(HashSet<Cluster> clusters) {
+        for (Cluster cluster: clusters) {
+            cluster.readjustCenter();
+        }
     }
 
 
