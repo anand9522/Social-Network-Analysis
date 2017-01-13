@@ -15,6 +15,7 @@ public class GraphNode {
         this.unmarked_followers=0;
         following=new HashSet<>();
         followers=new HashSet<>();
+        this.weight=0;
     }
     //whether it has been reached through an influencer or not.
     private boolean covered;
@@ -23,6 +24,9 @@ public class GraphNode {
 
     //Counting number of followers left to be covered
     private int unmarked_followers;
+
+    //followers/following
+    private float weight;
 
     //People whom this user follows
     private HashSet<GraphNode> following;
@@ -56,9 +60,20 @@ public class GraphNode {
 
     public void addFollowing(GraphNode person){
         following.add(person);
+        weight=followers.size()/following.size();
     }
 
     public void addFollower(GraphNode person){
         followers.add(person);
+        if (following.size()==0){
+            weight=Float.MAX_VALUE;
+        }
+        else {
+            weight=following.size()/followers.size();
+        }
+    }
+
+    public float getWeight(){
+        return weight;
     }
 }
