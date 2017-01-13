@@ -46,7 +46,7 @@ public class GraphNode {
         return unmarked_followers;
     }
 
-    public HashSet getFollowers(){
+    public HashSet<GraphNode> getFollowers(){
         return new HashSet(followers);
     }
 

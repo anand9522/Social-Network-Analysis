@@ -1,9 +1,6 @@
 package Twitter_Analysis;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Created by anand on 12/01/17.
@@ -17,7 +14,7 @@ public class TwitterGraph {
         graphNodeMap=new HashMap<>();
     }
     //
-    public void addEdge(){
+    public void addEdge(int from, int to){
 
     }
 
@@ -31,11 +28,27 @@ public class TwitterGraph {
         return clusters;
     }
 
+
     public void randomClusterAllotment(HashSet<Cluster> clusters, int user, int k){
-        HashSet<GraphNode> alloted_centers=new HashSet<>();
-        Set<GraphNode> user_followers=new TreeSet<>(graphNodeMap.get(user).getFollowers());
-        for (int i = 0; i < k; i++) {
-            Cluster c=new Cluster();
+        for (GraphNode node: graphNodeMap.get(user).getFollowers()) {
+            if(clusters.size()<k) {
+                Cluster c = new Cluster();
+                c.setCenter(node);
+                clusters.add(c);
+            }
+            else {
+                float minDistance=Float.MAX_VALUE;
+                Cluster closestCluster=null;
+                for (Cluster c: clusters){
+                    float distance=Math.abs(c.getCenterWeight()-node.getWeight());
+                    if(distance<minDistance){
+                        closestCluster=c;
+                        minDistance=distance;
+                    }
+                }
+                closestCluster.addNodeToCluster(node);
+            }
         }
+
     }
 }
