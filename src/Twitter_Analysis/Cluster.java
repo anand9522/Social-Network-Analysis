@@ -19,7 +19,7 @@ public class Cluster {
         sum=0;
     }
 
-    public HashSet<GraphNode> getAllotedVertices() {
+    public HashSet<GraphNode> getAllotedNodes() {
         return new HashSet<>(allotedNodes);
     }
 
@@ -52,6 +52,16 @@ public class Cluster {
     }
 
     public void readjustCenter(){
+        float closest=getCenterWeight();
+        GraphNode closest_to_mean=center;
+        for (GraphNode node:allotedNodes){
+            float diff=Math.abs(node.getWeight()-mean);
+            if (diff<closest){
+                closest=diff;
+                closest_to_mean=node;
+            }
+        }
+        center=closest_to_mean;
 
     }
 }

@@ -34,6 +34,9 @@ public class GraphNode {
     //This users followers
     private HashSet<GraphNode> followers;
 
+    public  void setCovered(){
+        this.covered=true;
+    }
     public boolean isCovered() {
         return covered;
     }
@@ -50,12 +53,12 @@ public class GraphNode {
         return new HashSet(followers);
     }
 
-    public HashSet getFollowing(){
+    public HashSet<GraphNode> getFollowing(){
         return new HashSet(following);
     }
 
-    public void setUnmarkedFollowers(int unmarked_followers){
-        this.unmarked_followers=unmarked_followers;
+    public void decrementUnmarkedFollowers(){
+        this.unmarked_followers--;
     }
 
     public void addFollowing(GraphNode person){
@@ -63,14 +66,16 @@ public class GraphNode {
         weight=followers.size()/following.size();
     }
 
+
     public void addFollower(GraphNode person){
         followers.add(person);
-        if (following.size()==0){
-            weight=Float.MAX_VALUE;
+        if (following.size()<=1) {
+            weight=followers.size();
         }
         else {
-            weight=following.size()/followers.size();
+            weight=followers.size()/following.size();
         }
+        unmarked_followers++;
     }
 
     public float getWeight(){

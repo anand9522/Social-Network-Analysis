@@ -1,7 +1,5 @@
 package Twitter_Analysis;
 
-import graph.Graph;
-
 import java.util.*;
 
 /**
@@ -15,9 +13,24 @@ public class TwitterGraph {
     public TwitterGraph(){
         graphNodeMap=new HashMap<>();
     }
+
+    public boolean containsNode(int node){
+        return graphNodeMap.containsKey(node);
+    }
     //
     public void addEdge(int from, int to){
+        if (!graphNodeMap.containsKey(from)){
+            GraphNode node = new GraphNode(from);
+            graphNodeMap.put(from,node);
+        }
 
+        if (!graphNodeMap.containsKey(to)){
+            GraphNode node = new GraphNode(to);
+            graphNodeMap.put(to,node);
+        }
+
+        graphNodeMap.get(to).addFollower(graphNodeMap.get(from));
+        graphNodeMap.get(from).addFollowing(graphNodeMap.get(to));
     }
 
     public HashSet<Cluster> getCommunities(int user, int k){
@@ -37,10 +50,49 @@ public class TwitterGraph {
         return clusters;
     }
 
+    public HashSet<GraphNode> getK_DominationSet(int k){
+        HashSet<GraphNode> influencers=new HashSet<>();
+        if (graphNodeMap.size()<k){
+            return null;
+        }
+
+        while (influencers.size()<k) {
+            int max_uncovered_followers = 0;
+            GraphNode largest_influencer = null;
+            for (GraphNode node : graphNodeMap.values()) {
+                if (node.getUnmarked_followers() > max_uncovered_followers) {
+                    max_uncovered_followers = node.getUnmarked_followers();
+                    largest_influencer = node;
+                }
+            }
+            if (max_uncovered_followers == 0) {
+                break;
+            }
+            else {
+                influencers.add(largest_influencer);
+                recomputeUnmarkedFollowers(largest_influencer);
+            }
+        }
+        return influencers;
+    }
+
+    private void recomputeUnmarkedFollowers(GraphNode largest_influencer) {
+        largest_influencer.setCovered();
+        for (GraphNode node: largest_influencer.getFollowers()){
+            if (!node.isCovered()){
+                node.setCovered();
+                for (GraphNode following: node.getFollowing()){
+                    following.decrementUnmarkedFollowers();
+                }
+            }
+        }
+    }
+
+
     private boolean reallotNodesToClusters(HashSet<Cluster> clusters) {
         Boolean moved=false;
         for (Cluster cluster:clusters){
-            for (GraphNode node: cluster.getAllotedVertices()) {
+            for (GraphNode node: cluster.getAllotedNodes()) {
                 float min=Float.MAX_VALUE;
                 Cluster nearestCluster=null;
 
