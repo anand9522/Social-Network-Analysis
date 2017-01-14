@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7581ae2-d531-485f-b742-6b14ff216ea5" name="Default" comment="GraphNode&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java" afterPath="$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SocialNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +64,7 @@
       <file leaf-file-name="GraphNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/GraphNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
+            <state relative-caret-position="367">
               <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwitterGraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TwitterGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="36" column="108" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
+            <state relative-caret-position="795">
+              <caret line="53" column="141" selection-start-line="53" selection-start-column="141" selection-end-line="53" selection-end-column="141" />
               <folding>
                 <element signature="e#234#235#0" expanded="true" />
                 <element signature="e#278#279#0" expanded="true" />
@@ -96,22 +96,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cluster.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Cluster.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/Cluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+            <state relative-caret-position="202">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="e#410#411#0" expanded="true" />
                 <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#661#662#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#741#742#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1051#1052#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,8 +118,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,9 +181,9 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/graph/CapGraph.java" />
         <option value="$PROJECT_DIR$/src/twitter_analysis/GraphInterface.java" />
-        <option value="$PROJECT_DIR$/src/Twitter_Analysis/Cluster.java" />
         <option value="$PROJECT_DIR$/src/Twitter_Analysis/GraphNode.java" />
         <option value="$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java" />
+        <option value="$PROJECT_DIR$/src/Twitter_Analysis/Cluster.java" />
       </list>
     </option>
   </component>
@@ -911,8 +909,8 @@
     <entry file="file://$PROJECT_DIR$/src/package-info.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -943,9 +941,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/GraphNode.java">
+    <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
+          <caret line="53" column="141" selection-start-line="53" selection-start-column="141" selection-end-line="53" selection-end-column="141" />
+          <folding>
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/GraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
           <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -963,32 +974,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        <state relative-caret-position="202">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="e#410#411#0" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Twitter_Analysis/TwitterGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="36" column="108" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
-          <folding>
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>

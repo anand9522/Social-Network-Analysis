@@ -6,6 +6,8 @@
  */
 package util;
 
+import Twitter_Analysis.Graph;
+
 import java.io.File;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -17,8 +19,7 @@ public class GraphLoader {
      * The file should consist of lines with 2 integers each, corresponding
      * to a "from" vertex and a "to" vertex.
      */ 
-    public static void loadGraph(graph.Graph g, String filename) {
-        Set<Integer> seen = new HashSet<Integer>();
+    public static void loadGraph(Graph g, String filename) {
         Scanner sc;
         try {
             sc = new Scanner(new File(filename));
@@ -31,14 +32,7 @@ public class GraphLoader {
         while (sc.hasNextInt()) {
             int v1 = sc.nextInt();
             int v2 = sc.nextInt();
-            if (!seen.contains(v1)) {
-                g.addVertex(v1);
-                seen.add(v1);
-            }
-            if (!seen.contains(v2)) {
-                g.addVertex(v2);
-                seen.add(v2);
-            }
+
             g.addEdge(v1, v2);
         }
         

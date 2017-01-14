@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by anand on 12/01/17.
  */
-public class TwitterGraph {
+public class TwitterGraph implements Graph{
 
     //int corresponding to GraphNode
     private HashMap<Integer,GraphNode> graphNodeMap;
@@ -19,6 +19,7 @@ public class TwitterGraph {
         return graphNodeMap.containsKey(node);
     }
 
+    @Override
     public void addEdge(int from, int to){
         if (!graphNodeMap.containsKey(from)){
             GraphNode node = new GraphNode(from);
@@ -51,6 +52,7 @@ public class TwitterGraph {
         }
         return clusters;
     }
+
     // Harder Question: k-most Domination Set. this is a heuristic because optimal solution is NP- Complete and not feasible for large graph.
     public HashSet<GraphNode> getK_DominationSet(int k){
         HashSet<GraphNode> influencers=new HashSet<>();
